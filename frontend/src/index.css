@@ -1,55 +1,369 @@
-main{
-    min-height: 80vh;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+main {
+  min-height: 80vh;
 }
 
-h1{
-  font-size: 1.8rem;
-  padding:1rem 0;
+h1 {
+  font-size: 2rem;
+  padding: 1rem 0;
 }
 
-h2{
-  font-size: 1.4rem;
-  padding:0.5rem 0;
+h2 {
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
 }
 
-h3{
-    padding:1rem 0;
+h3 {
+  padding: 1rem 0;
 }
 
-.rating span{
-  margin:0.1rem;
+.rating span {
+  margin: 0 0.2rem;
 }
 
-/* carousel */
+/* Navbar */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .me-3 {
+  margin-left: auto;
+}
+
+.navbar-nav .me-3 .form-control {
+  width: 250px;
+}
+
+.navbar-nav .ms-auto {
+  margin-left: auto;
+}
+
+.form-control {
+  border-radius: 20px;
+  border-color: #ced4da;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: none;
+}
+
+.btn {
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.btn:hover {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #fff;
+}
+
+/* Carousel */
 .carousel-item-next,
 .carousel-item-prev,
 .carousel-item.active {
   display: flex;
 }
+
 .carousel-caption {
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
 }
 
 .carousel-caption h4 {
-  color: #fff;
+  color: #000;
+  font-weight: bold;
 }
 
 .carousel img {
-  display:block;
-  height: 300px;
-  padding: 30px;
-  margin: 40px;
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.carousel a {
+  display: block;
+  height: 400px;
   margin: 0 auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
-@media (max-width: 900px) {
-  .carousel-caption h2 {
-    font-size: 2.5vw;
+
+.carousel a.carousel-control-prev,
+.carousel a.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel a.carousel-control-prev {
+  left: 15px;
+}
+
+.carousel a.carousel-control-next {
+  right: 15px;
+}
+
+.carousel a.carousel-control-prev,
+.carousel a.carousel-control-next {
+  z-index: 5;
+  opacity: 0.8;
+}
+
+.carousel a.carousel-control-prev:hover,
+.carousel a.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Product CSS */
+.product-image {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.rating-color {
+  color: #f8e825;
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.d-grid {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.btn-dark {
+  background-color: #343a40;
+  color: #fff;
+  border: none;
+}
+
+.btn-dark:hover {
+  background-color: #23272b;
+}
+
+/* Shop Banner Styles */
+.shop-banner {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+.shop-banner h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.shop-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.shop-banner button {
+  font-size: 1.1rem;
+}
+
+/* Footer Styles */
+.footer-section {
+  padding: 20px;
+  color: #000;
+}
+
+.social-icons a {
+  color: #000;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.social-icons a:hover {
+  color: #000;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .footer-section {
+    text-align: center;
+    margin-bottom: 20px;
   }
 }
 
+/* Button Greyish Neon Effect */
+.neon-text {
+  position: relative;
+  color: #fff;
+  text-shadow: 0 0 5px #ccc, 0 0 10px #ccc, 0 0 15px #ccc, 0 0 20px #ccc, 0 0 25px #ccc;
+  transition: text-shadow 0.5s ease-in-out;
+}
+
+.neon-text::before,
+.neon-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.neon-text::before {
+  background: linear-gradient(to bottom left, rgba(204, 204, 204, 0.6), transparent);
+}
+
+.neon-text::after {
+  background: linear-gradient(to top right, rgba(204, 204, 204, 0.6), transparent);
+}
+
+.neon-text:hover::before {
+  opacity: 0;
+}
+
+.neon-text:hover::after {
+  opacity: 0;
+}
+
+
+/* Checkout Steps */
+.checkout-steps .nav-link {
+  color: #fff;
+  /* Default color for incomplete steps */
+}
+
+.checkout-steps .nav-link.disabled {
+  color: #fff;
+  /* Color for disabled steps */
+  opacity: 0.6;
+  /* Adjust opacity for disabled steps */
+}
+
+.checkout-steps {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.checkout-steps li {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.checkout-steps li:before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #ced4da;
+  border: 2px solid #fff;
+  /* White border around circles */
+}
+
+.checkout-steps li.active:before,
+.checkout-steps li.completed:before {
+  background-color: #28a745;
+}
+
+.checkout-steps li.active:after,
+.checkout-steps li.completed:after {
+  content: "\f00c";
+  /* Unicode for check icon */
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  top: 13px;
+  left: calc(50% - 8px);
+  font-size: 16px;
+  color: #fff;
+}
+
+.checkout-steps li.active:after {
+  color: #28a745;
+  /* Green color for check icon */
+}
+
+.checkout-steps li.active+li:before,
+.checkout-steps li.completed+li:before {
+  background-color: #f8f9fa;
+  /* White background color for checked steps */
+}
+
+/* Style for unchecked steps */
+.checkout-steps li:not(.active):not(.completed):before {
+  background-color: #303030;
+  /* Grey color for unchecked steps */
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .checkout-steps {
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .checkout-steps li {
+    flex: 0 0 50%;
+    margin-bottom: 15px;
+  }
+}
+
+/* Shipping Screen CSS with integrated flexbox styles */
+.shipping-container {
+  background: linear-gradient(to right, #6c757d, #aab7b8);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shipping-title {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.shipping-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shipping-form .form-group {
+  flex: 0 0 50%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.shipping-submit-btn {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.shipping-submit-btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
